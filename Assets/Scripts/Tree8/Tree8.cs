@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 /*
  * L-system generating simple trees.
- * Tree8: tree with rules:
+ * Tree8: V -> "[+++W][---W]YV", W -> "+X[-W]Z", X -> "-W[+X]Z", Y -> "YZ", Z -> "[-FFF][+FFF]F"
  * Miia Remahl 
  * 23.11.2020
  * mrema003@gold.ac.uk
@@ -42,7 +42,6 @@ public class Tree8 : MonoBehaviour
     void Start()
     {
         createTree();
-
     }
 
     //creates a tree by calling the general tree class
@@ -73,6 +72,7 @@ public class Tree8 : MonoBehaviour
             {'Z', zRules },
         };
 
+        //set max iterations
         iterationMax = 11;
 
         //start

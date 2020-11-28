@@ -56,7 +56,10 @@ public class Tree7 : MonoBehaviour
 
     void Start()
     {
+        //max iterations
         iterationMax = 5;
+
+        //create tree
         createTree();
 
         //greate random tree storage

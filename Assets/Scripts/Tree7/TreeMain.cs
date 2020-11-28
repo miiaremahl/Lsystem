@@ -13,8 +13,6 @@ using UnityEngine.UI;
  * 23.11.2020
  * mrema003@gold.ac.uk
  * 
- * References:
- * 1.Peter Philips - L-Systems Unity Tutorial [2018.1] : https://www.youtube.com/watch?v=tUbTGWl-qus
  * 
  */
 
@@ -40,7 +38,6 @@ public class TreeMain : MonoBehaviour
 
     //stack for all the branches (prefabs)
     private Stack<GameObject> branches;
-
 
     //dictionary for the rules 
     private Dictionary<char, string[]> rules;
@@ -84,6 +81,7 @@ public class TreeMain : MonoBehaviour
 
     void Start()
     {
+        //set last length and angle to 0
         lastAngle = 0;
         lastLength = 0;
     }
@@ -99,7 +97,6 @@ public class TreeMain : MonoBehaviour
 
         //create stack for prefabs
         branches = new Stack<GameObject>();
-
 
         //set values for rules, axiom, rotation, length, iterations
         rules = newRules;
@@ -118,6 +115,7 @@ public class TreeMain : MonoBehaviour
 
     }
 
+    //setting the UI values
     private void SetUIValues()
     {
         ui.setRotation(angle);
@@ -134,13 +132,11 @@ public class TreeMain : MonoBehaviour
             {
                 changeLength();
             }
-
             //change rotation angle
             if (ui.rotation != angle)
             {
                 changeRotation();
             }
-
             //change iterations
             if (ui.iteration != iterations)
             {
@@ -155,7 +151,6 @@ public class TreeMain : MonoBehaviour
         length = ui.length;
         resetTree();
         Generate();
-
     }
 
     //change angle of the rotation
@@ -173,7 +168,6 @@ public class TreeMain : MonoBehaviour
         resetTree();
         Generate();
     }
-
 
     private void Generate()
     {
@@ -238,7 +232,6 @@ public class TreeMain : MonoBehaviour
 
                         }
                         currentString = sb.ToString();
-
                         //store the iteration
                         iterationTable[i] = currentString;
                         sb = new StringBuilder();
@@ -248,7 +241,6 @@ public class TreeMain : MonoBehaviour
 
                     //set last iterations to the latest
                     lastIteration = iterations;
-
                 }
             }
             else
@@ -279,9 +271,7 @@ public class TreeMain : MonoBehaviour
                         }
 
                     }
-
                     currentString = sb.ToString();
-
                     //store the iteration
                     iterationTable[i] = currentString;
                     sb = new StringBuilder();
@@ -429,7 +419,6 @@ public class TreeMain : MonoBehaviour
     //adds a branch to the tree
     public void addBranch()
     {
-       
         //take the position for the prefab
         Vector3 initialPosition = transform.position;
 

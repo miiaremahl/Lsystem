@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Branch : MonoBehaviour
 {
+   //destrooy prefab
    public void Destroy()
    {
         Destroy(gameObject);

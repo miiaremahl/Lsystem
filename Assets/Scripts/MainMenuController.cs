@@ -82,6 +82,7 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Tree8");
     }
 
+    //load mainmenu
     public void loadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");

@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/*
+ * UI class for the L-system
+ * Miia Remahl 
+ * 23.11.2020
+ * mrema003@gold.ac.uk
+ * 
+ */
 public class UI : MonoBehaviour
 {
     //length 
@@ -26,27 +33,25 @@ public class UI : MonoBehaviour
     //dictionary for the rotation 
     private Dictionary<float, int> rotationFloatRules;
 
-
+    //rotation rules (float)
     private Dictionary<int, float> rotationRules;
 
     //refrence to main camera
     public Camera camera;
 
 
-  
     public void Update()
     {
+        //zooming
         if (Input.GetKeyDown(KeyCode.Z))
         {
             camera.fieldOfView -= 1;
-
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
             camera.fieldOfView += 1;
         }
     }
-
 
     //handles input changes for length
     public void HandleInputData(int val)

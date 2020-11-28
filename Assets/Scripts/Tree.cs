@@ -43,10 +43,8 @@ public class Tree : MonoBehaviour
     //stack for all the branches (prefabs)
     private Stack<GameObject> branches;
 
-
     //dictionary for the rules 
     private Dictionary<char, string> rules;
-
 
     //starting character
     private string start = "X";
@@ -93,7 +91,6 @@ public class Tree : MonoBehaviour
         //create stack for prefabs
         branches = new Stack<GameObject>();
 
-
         //set values for rules, axiom, rotation, length, iterations
         rules = newRules;
         start = axiom;
@@ -107,9 +104,9 @@ public class Tree : MonoBehaviour
 
         //generate the tree
         Generate();
-
     }
 
+    //set UI values
     private void SetUIValues()
     {
         ui.setRotation(angle);
@@ -121,8 +118,6 @@ public class Tree : MonoBehaviour
     {
         if (rulesSet)
         {
-
-
             //change steplength
             if (ui.length != length)
             {
@@ -188,8 +183,6 @@ public class Tree : MonoBehaviour
             //make a new string builder
             StringBuilder sb = new StringBuilder();
 
-
-
             for (int i = 0; i < iterations; i++)
             {
                 foreach (char c in currentString)
@@ -200,7 +193,6 @@ public class Tree : MonoBehaviour
                 currentString = sb.ToString();
                 sb = new StringBuilder();
             }
-
             NextIteration(currentString);
         }
     }
@@ -297,6 +289,7 @@ public class Tree : MonoBehaviour
         transform.rotation = ti.rotation;
     }
 
+    //error for unknown values
     public void giveError()
     {
         Debug.Log("Invalid values given");
@@ -305,7 +298,6 @@ public class Tree : MonoBehaviour
     //adds a branch to the tree
     public void addBranch()
     {
-       
         //take the position for the prefab
         Vector3 initialPosition = transform.position;
 
